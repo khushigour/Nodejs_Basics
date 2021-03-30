@@ -8,6 +8,7 @@ const shopRoutes = require('./routes/shop');
 
 app.use(bodyParser.urlencoded({extended: false})); 
 //It registers themiddleware and will call next so it reaches out middleware before that it will do body parsing but it will not parse all types...
+app.use(express.static(path.join(__dirname,'public')));
 
 app.use('/admin',adminRoutes);
 app.use(shopRoutes);
